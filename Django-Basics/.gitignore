@@ -1,0 +1,10 @@
+# Python virtual environments (host-specific binaries)
+.venv/
+venv/
+
+# Environment variables (sensitive data)
+.env
+
+# Python compiled bytecode (prevents stale code issues)
+__pycache__/
+*.pyc
