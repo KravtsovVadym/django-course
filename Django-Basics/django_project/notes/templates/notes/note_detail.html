@@ -1,0 +1,16 @@
+{% extends 'layout.html' %} {% block content %}
+
+<div>
+    <h1> Title: {{ object.title }} </h1>
+    <p> Note: {{ object.body }} </p>
+    <p> Create at: {{ object.create_at }} </p>
+    <a href="{% url 'note-list' %}"> back to list </a> <br>
+    <a href="{% url 'note-edit' object.pk %}"> edit note </a>
+
+    <form action="{% url 'note-delete' object.pk %}" method="post">
+        {% csrf_token %}
+        <button type="submit">delete note</button>
+    </form>
+</div>
+
+{% endblock content %}

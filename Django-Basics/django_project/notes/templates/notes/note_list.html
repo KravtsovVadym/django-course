@@ -1,0 +1,25 @@
+{% extends 'layout.html' %} {% block content %}
+
+<style>
+
+</style>
+
+<h1>Notes</h1>
+<ul>
+    {% for note in object_list %}
+    <li>
+        <h2> {{ note.title }} </h2>
+        <a href="{% url 'note-detail' note.pk %}">detail</a> <br>
+    </li>
+    
+    {% empty %}
+    <li>
+        <p> No notes yet. </p>
+    </li>
+    {% endfor %}
+    <br><br>
+    <li>
+        <a href="{% url 'note-create'%}">create note</a>
+    </li>
+</ul>
+{% endblock content %}

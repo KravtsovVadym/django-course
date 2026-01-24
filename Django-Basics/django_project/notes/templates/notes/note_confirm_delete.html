@@ -1,0 +1,14 @@
+{% extends 'layout.html' %} {% block content %}
+
+<div>
+    <h1>Delete Note</h1>
+    <p>Are you sure you want to delete "{{ object.title }}"?</p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, delete</button>
+        <a href="{% url 'note-detail' object.pk %}">Cancel</a>
+    </form>
+</div>
+
+{% endblock content %}
