@@ -8,3 +8,6 @@ venv/
 # Python compiled bytecode (prevents stale code issues)
 __pycache__/
 *.pyc
+
+# DataBase
+*.sqlite3
