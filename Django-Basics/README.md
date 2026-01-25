@@ -14,15 +14,28 @@
 1. **Clone the repository:**
     ```bash
     git clone <repo-url>
+    ```
+    ```bash
     cd <Django-Basics/django_project>
+    ```
+    ```bash
     python -m venv .venv
+    ```
+    ```bash
     source .venv/bin/activate # On Windows: .venv\Scripts\activate
+    ```
+    ```bash
     pip install -r requirements.txt
     ```
 2. **Configuration:**
     ```bash
     cp .env.example .env # Create environment variables
-    python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())' # Generate SECRET_KEY
+    ```
+    ```bash
+    python -c 'from django.core.management.utils import 
+    ```
+    ```bash
+    get_random_secret_key; print(get_random_secret_key())' # Generate SECRET_KEY
     # Copy the output and paste it into your .env file as the value for SECRET_KEY.
     ```
 3. **Apply migrations:**
