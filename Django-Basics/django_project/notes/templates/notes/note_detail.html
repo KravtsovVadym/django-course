@@ -6,11 +6,7 @@
     <p> Create at: {{ object.create_at }} </p>
     <a href="{% url 'note-list' %}"> back to list </a> <br>
     <a href="{% url 'note-edit' object.pk %}"> edit note </a>
-
-    <form action="{% url 'note-delete' object.pk %}" method="post">
-        {% csrf_token %}
-        <button type="submit">delete note</button>
-    </form>
+    <a href="{% url 'note-delete' object.pk %}">delete</a>
 </div>
 
 {% endblock content %}
