@@ -12,16 +12,15 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="{% static 'weblog/css/style.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
-    <link rel="stylesheet" asset="eduser.css" href="moz-extension://b2fabf2a-3cc0-4e75-ae9f-eab45014649d/assets/eduser.css">
-
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'accounts/css/style.css' %}" />
   </head>
   <body>
     {% block navbar %}
     <div class="container">
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
+          <a class="navbar-brand" href="{% url 'weblog:index' %}">Awesome posts >>></a>
           <button
             class="navbar-toggler"
             type="button"
@@ -35,11 +34,16 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="#">Posts</a>
-              <a class="nav-link" href="{% url 'registry' %}">Register</a>
-              <a class="nav-link" href="{% url 'index' %}">Login</a>
-              <a class="nav-link" href="#">Logout</a>
-              <a class="nav-link disabled" aria-disabled="true">Add post</a>
+              {% load navigation_tag %}
+              <a class="nav-link {% active_link request 'index' %}" href="{% url 'weblog:index' %}">Posts</a>
+              <a class="nav-link" href="#">Add tag</a>
+              <a class="nav-link {% active_link request 'registry' %}" href="{% url 'accounts:registry' %}">Register</a>
+              <a class="nav-link {% active_link request 'login' %}" href="{% url 'accounts:login' %}">Login</a>
+              {% comment %} <a class="nav-link {% active_link request 'logout' %} " href="{% url 'accounts:logout' %}">Logout</a> {% endcomment %}
+              <form action="{% url 'accounts:logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class=" nav-link" > Logout</button>
+              </form>
             </div>
           </div>
         </div>
@@ -50,7 +54,7 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
-      
     ></script>
   </body>
 </html>
+
