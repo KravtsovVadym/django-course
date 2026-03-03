@@ -1,7 +1,9 @@
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser, PermissionsMixin
 from django.db import models
 
-
+# >---------------------------------------<
+# (Custom user manager) ------------------<
+# >---------------------------------------<
 class UserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
         if not email:
@@ -17,7 +19,9 @@ class UserManager(BaseUserManager):
         extra_fields.setdefault('is_superuser', True)
         return self.create_user(email, password, **extra_fields)
 
-
+# >---------------------------------------<
+# (Custom user model) --------------------<
+# >---------------------------------------<
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField('email address', unique=True)
     first_name = models.CharField('first name', max_length=50)
@@ -33,7 +37,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.email
 
-    # Retur True if the user is allowed to have access the admin site.
-    @property
+    # Return True if the user is allowed to have access the admin site.
+    @property   
     def is_staff(self):
         return self.is_superuser
