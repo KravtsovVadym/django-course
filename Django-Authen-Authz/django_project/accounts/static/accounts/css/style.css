@@ -1,0 +1,38 @@
+/* (stylesheet: accounts/registry, account/login) container ------------- */
+
+.rg-lg-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 0 10px;
+}
+
+/* -------------------------------------------------------------- */
+
+/* (stylesheet: forms registry) ---------------------------------------- */
+
+.form-text {
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: rgba(255, 255, 255, 0.75);
+}
+.form-label {
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.75);
+  display: block;
+}
+
+/* (error: block) */
+.er-bl {
+  display: block;
+  color: rgba(249, 44, 44, 0.75);
+  margin-top: 0.25rem;
+}
+/* (buttons) */
+.btn-outline-primary {
+  --bs-btn-color: #e0ddb4;
+  --bs-btn-border-color: #0db9fd;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #0dfddd3c;
+}
+/* -------------------------------------------------------------- */
