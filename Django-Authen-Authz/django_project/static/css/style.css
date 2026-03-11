@@ -1,0 +1,49 @@
+body {
+  background: #232321;
+}
+
+h1 {
+  color: #fff;
+  padding: 10px 0;
+}
+
+/* ----------------------------------------------- */
+/* navbar */
+/* ----------------------------------------------- */
+.navbar-brand {
+  color: #969696;
+}
+
+.navbar-brand:focus,
+.navbar-brand:hover {
+  color: #ffffff;
+}
+
+.nav-link {
+  color: #969696;
+}
+
+.navbar-nav .nav-link.active {
+  color: #ffffff;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.b-logout {
+  background: none; 
+  border: none;
+  color: #969696;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* ------------------------------------------------ */
+
